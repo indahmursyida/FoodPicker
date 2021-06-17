@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="search-filter.css" rel="stylesheet">
+    <script src="search.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="left-header">
+            <a href="">
+                <img src="Assets/home-logo.png" alt="">
+            </a>
+        </div>
+
+        <div class="right-header">
+            <h3>Hello, Steven William!</h3>
+            <img src="Assets/profile.png" alt="">
+            <a class="logout" href="home.html">Log Out</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-container">
+            <h1 class="banner-title">Food Picker</h1>
+            <h1 class="banner-description">
+                Food Picker is here to help you pick food when you’re not sure on what to eat! Sort, filter, and randomize food anyway that you’d like!
+            </h1>
+        </div>
+    </div>
+
+    <!-- Searchbox -->
+    <br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for food..">
+
+    <!-- Control buttons -->
+<div id="myBtnContainer">
+    <a href="./home-login.html"><button class="btn active">Home</button></a>
+    <button class="btn active" onclick="filterSelection('all')"> Search</button>
+    <button class="btn active" onclick="randomize('all')">Randomize</button>
+    <br>
+    <h4>Protein</h4>
+    <button class="btn" onclick="filterSelection('chicken')"> Chicken</button>
+    <button class="btn" onclick="filterSelection('beef')"> Beef</button>
+    <button class="btn" onclick="filterSelection('pork')"> Pork</button>
+    <h4>Others</h4>
+    <button class="btn" onclick="filterSelection('mushroom')"> Mushroom</button>
+    <button class="btn" onclick="filterSelection('broccoli')"> Broccoli</button>
+    <button class="btn" onclick="filterSelection('cheese')"> Cheese</button>
+    <h4>Allergens</h4>
+    <button class="btn" onclick="allergySelection('chicken')"> Chicken</button>
+    <button class="btn" onclick="allergySelection('beef')"> Beef</button>
+    <button class="btn" onclick="allergySelection('pork')"> Pork</button>
+    <button class="btn" onclick="allergySelection('mushroom')"> Mushroom</button>
+    <button class="btn" onclick="allergySelection('broccoli')"> Broccoli</button>
+    <button class="btn" onclick="allergySelection('cheese')"> Cheese</button>
+  </div>
+
+
+  <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+  <ul id="myUL">
+    <div class="container">
+
+        <li><a href="https://www.foodnetwork.com/recipes/melissa-darabian/homemade-chicken-nuggets-3416573" target="_blank">
+            <div class="filterDiv chicken">
+            <img src="./Assets/nugget.jpg" class="thumbnail">
+            <br>
+            Chicken Nuggets
+        </div></a></li>
+
+        <li><a href="https://www.dinneratthezoo.com/beef-and-broccoli-stir-fry/"  target="_blank">
+            <div class="filterDiv broccoli beef">
+            <img src="./Assets/beefbroccoli.jpg" class="thumbnail">
+            <br>
+            Stir Fried Beef Broccoli
+        </div></a></li>
+
+        <li><a href="https://cookpad.com/id/resep/8238002-ayam-woku-belanga-asli-manado"  target="_blank">
+            <div class="filterDiv chicken">
+            <img src="./Assets/woku.jpg" class="thumbnail">
+            <br>
+             Manado Woku Chicken
+        </div></a></li>
+
+        <li><a href="https://www.allrecipes.com/recipe/242291/easy-broccoli-bacon-salad/"  target="_blank">
+            <div class="filterDiv broccoli">
+            <img src="./Assets/broccolibacon.jpg" class="thumbnail">
+            <br>
+            Broccoli Bacon Salad
+        </div></a></li>
+
+        <li><a href="https://damndelicious.net/2015/01/10/creamy-chicken-mushroom-soup/"  target="_blank">
+            <div class="filterDiv chicken mushroom">
+            <img src="./Assets/chickencreamsoup.jpg" class="thumbnail">
+            <br>
+            Chicken Mushroom Cream Soup
+        </div></a></li>
+
+        <li><a href="https://www.allrecipes.com/recipe/279837/cheesy-chicken-and-broccoli-casserole/"  target="_blank">
+            <div class="filterDiv broccoli chicken cheese">
+            <img src="./Assets/cheesycasserole.jpg" class="thumbnail">
+            <br>
+            Cheesy Chicken Broccoli Casserole
+        </div></a></li>
+
+        <li><a href="https://plantd.co/crispy-enoki-mushrooms-with-spicy-mayo/"  target="_blank">
+            <div class="filterDiv mushroom">
+            <img src="./Assets/crispyenoki.jpg" class="thumbnail">
+            <br>
+            Crispy Fried Enoki
+        </div></a></li>
+
+        <li><a href="https://www.recipetineats.com/creamy-mushroom-pasta/"  target="_blank">
+            <div class="filterDiv mushroom cheese">
+            <img src="./Assets/mushroompasta.jpg" class="thumbnail">
+            <br>
+            Creamy Mushroom Pasta
+        </div></a></li>
+
+        <li><a href="https://www.allrecipes.com/recipe/218091/classic-and-simple-meat-lasagna/"  target="_blank">
+            <div class="filterDiv beef cheese">
+            <img src="./Assets/lasagna.jpeg" class="thumbnail">
+            <br>
+            Beef Lasagna
+        </div></a></li>
+
+        <li><a href="https://cafedelites.com/ribeye-steaks-with-mushroom-gravy/"  target="_blank">
+            <div class="filterDiv beef mushroom">
+            <img src="./Assets/beefsteak.jpg" class="thumbnail">
+            <br>
+            Beef Steak with Mushroom Sauce
+        </div></a></li>
+
+        <li><a href="https://www.aspicyperspective.com/best-hamburger-patty-recipe/"  target="_blank">
+            <div class="filterDiv beef cheese">
+            <img src="./Assets/hamburger.jpg" class="thumbnail">
+            <br>
+            Beef Hamburger
+        </div></a></li>
+
+        <li><a href="https://www.tasteofhome.com/recipes/sesame-beef-skewers/"  target="_blank">
+            <div class="filterDiv beef">
+            <img src="./Assets/skewers.jpg" class="thumbnail">
+            <br>
+            Sesame Beef Skewers
+        </div></a></li>
+
+        <li><a href="https://holycowvegan.net/vegan-mushroom-stew/"  target="_blank">
+            <div class="filterDiv mushroom">
+            <img src="./Assets/mushroomstew.jpg" class="thumbnail">
+            <br>
+            Mushroom Stew
+        </div></a></li>
+
+        <li><a href="https://www.myrecipes.com/recipe/cheesy-bacon-potato-salad"  target="_blank">
+            <div class="filterDiv pork cheese">
+            <img src="./Assets/cheesybaconsalad.jpeg" class="thumbnail">
+            <br>
+            Cheesy Bacon Potato Salad
+        </div></a></li>
+
+        <li><a href="https://www.taste.com.au/recipes/roast-loin-pork-crispy-crackling-roasted-apples/19b381cc-2a9e-4bfa-a2fc-f07167895f9e"  target="_blank">
+            <div class="filterDiv pork">
+            <img src="./Assets/rolledpork.jpg" class="thumbnail">
+            <br>
+            Rolled Roast Pork Loin
+        </div></a></li>
+
+        <li><a href="https://www.bonappetit.com/recipe/pork-marbella"  target="_blank">
+            <div class="filterDiv pork mushroom">
+            <img src="./Assets/porkmarbella.jpg" class="thumbnail">
+            <br>
+            Pork Marbella
+        </div></a></li>
+
+      </div>
+  </ul>
+  
+
+</body>
+</html>
